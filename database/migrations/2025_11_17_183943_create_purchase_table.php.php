@@ -15,10 +15,10 @@ return new class extends Migration
         if (!Schema::hasTable('purchases')) {
             Schema::create('purchases', function (Blueprint $table) {
                 $table->id();
-                $table->foregnId('user_id')
+                $table->foreignId('user_id')
                     ->constrained()
                     ->onUpdate('cascade');
-                $table->foregnId('product_id')
+                $table->foreignId('product_id')
                     ->constrained()
                     ->onUpdate('cascade');
                 $table->decimal('price', 10, 2);
